@@ -1,0 +1,39 @@
+
+roles-rm, lead
+objects-order product, ticket, platform
+actions-view, edit, delete, insert
+user- 
+gaurav, rm    
+sohrab, lead
+
+policy_store
+v0, v1, v2, v3
+
+gaurav,rm, null, "g" -> role definition
+sohrab,lead, null, "g" -> role definition
+rm, lead, "m", "g"
+exec, rm, "m", "g"
+rm, order, null, "p"
+rm, product, null, "p",
+exec, tickets, null, "p",
+exec, tickets, null, "p"
+
+
+
+
+user_policies
+user => on login => JWT => {userId, ttl, username, } => 
+
+user_authr_token
+user_id, token
+{
+    "object": ["view"]
+    "object1": ["view", "edit"]
+}
+
+
+user, email 
+
+            abc
+            [mem1, mem2, ]
+                def     
