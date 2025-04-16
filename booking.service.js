@@ -32,7 +32,7 @@ const convertToMinuteCount = (slot) => {
       return position;
     }
     validateEnd(end) {
-      let position = -1;
+      let position = this.endTimes.length;
       const endTimes = this.endTimes;
       for (let i = 0; i < endTimes.length; i++) {
         if (endTimes[i] > end) {
@@ -52,7 +52,9 @@ const convertToMinuteCount = (slot) => {
       try {
         const startCount = convertToMinuteCount(start);
         const endCount = convertToMinuteCount(end);
-  
+        if (startCount >= endCount) {
+            throw new Error('Invalid input');
+        }
         const startPosition = this.validateStart(startCount);
         const endPosition = this.validateEnd(endCount);
   
